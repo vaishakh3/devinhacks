@@ -11,6 +11,7 @@
     document.body.classList.toggle('menu-open', open);
     if (restoreFocus) menu.focus();
   }
+  matchMedia('(min-width:761px)').addEventListener('change', e => { if (e.matches) setMenu(false); });
   menu.addEventListener('click', () => setMenu(menu.getAttribute('aria-expanded') !== 'true'));
   mobileNav.addEventListener('click', e => { if (e.target.closest('a')) setMenu(false); });
   document.addEventListener('click', e => { if (!mobileNav.hidden && !header.contains(e.target)) setMenu(false); });
@@ -126,6 +127,8 @@
         a.replaceChildren(document.createTextNode('Register now '));
         const arrow = document.createElement('span'); arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true'); a.append(arrow);
       });
+      const ticketNote = document.querySelector('.ticket-note');
+      if (ticketNote) ticketNote.textContent = 'Registration is open.';
       document.querySelector('#registration-answer').textContent = 'Registration is open. Use the application link to review the participation details and register.';
       document.querySelector('#registration-status').textContent = 'Your next build starts here. Registration is open.';
       document.querySelector('#registration-fact').textContent = 'Open now';
