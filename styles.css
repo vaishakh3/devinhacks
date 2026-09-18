@@ -62,3 +62,14 @@
 .arcade-track{border:0}
 .arcade-track:before,.arcade-track:after{display:none}
 .site-footer .footer-meta{border:0}
+
+/* Pixel arcade scene: a clear gameplay lane, electric-blue maze and stars. */
+.site-footer{background-color:#040611;background-image:radial-gradient(circle at 20% 30%,#c7d8ff 0 1px,transparent 1.3px),radial-gradient(circle at 75% 65%,#6179aa 0 1px,transparent 1.3px),radial-gradient(ellipse at 50% 0%,#11132c88,transparent 75%);background-size:157px 113px,109px 137px,100% 100%}
+.arcade-track{height:228px}
+.arcade-hud{position:absolute;top:18px;left:var(--gutter);right:var(--gutter);display:flex;justify-content:space-between;gap:20px;font:700 14px/1.4 var(--mono);letter-spacing:1px;color:#fff0d2}
+.arcade-hud b{color:#ffff00;margin-left:7px}
+.arcade-lives{color:#ffff00;font-style:normal;letter-spacing:5px;margin-left:25px}
+#footer-arcade{image-rendering:pixelated}
+@media(max-width:540px){.arcade-track{height:208px}.arcade-hud{font-size:10px;letter-spacing:.5px;top:17px}.arcade-lives{display:none}.site-footer .footer-meta{padding-top:5px}}
+
+.arcade-lives{display:inline-flex;gap:7px;align-items:center;font-size:0;vertical-align:middle}.arcade-lives:before,.arcade-lives:after{content:"";width:12px;height:12px;background:#ffff00;clip-path:polygon(100% 0,100% 23%,52% 50%,100% 77%,100% 100%,0 100%,0 0);border-radius:50%}@media(max-width:540px){.arcade-lives{display:none}}

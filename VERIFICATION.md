@@ -54,3 +54,5 @@ Browser follow-up confirmed the ac2 desktop HEVC source at 1920 × 1080, success
 A lightweight canvas animation moves a Pac-Man-style character across a row of pellets. It pauses offscreen and in background tabs, respects reduced-motion preferences, and can be stopped with Escape. Desktop (1280px) and mobile (390px) browser checks confirmed movement, disappearing pellets, aligned credits, and no mobile horizontal overflow. JavaScript syntax and local asset/anchor checks passed.
 
 Arcade palette revision: bright yellow character without an eye, near-black background with sparse stars, and no divider rules. Mobile visual check and JavaScript syntax check passed; no browser console errors. Hero playback code unchanged following confirmation that Low Power Mode caused the reported poster-only state.
+
+Pixel arcade revision: 16×16 Pac-Man and four ghost sprites, blue maze walls, score/level display, and brighter stars. Animated sprites share a clear corridor; loop resets after the trailing ghost exits. Desktop and 390px mobile visual checks passed, with no horizontal overflow or console errors. Reduced-motion and offscreen pause behavior retained.
