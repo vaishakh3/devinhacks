@@ -1,0 +1,18 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Devin Hacks Kochi//Save the date//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:devin-hacks-kochi-20261024@event.local
+DTSTAMP:20260918T000000Z
+DTSTART;VALUE=DATE:20261024
+DTEND;VALUE=DATE:20261025
+SUMMARY:Devin Hacks Kochi — save the date
+LOCATION:Kochi — venue to be confirmed
+DESCRIPTION:12-hour solo hackathon. This is a date reminder only. Start time
+  and venue are to be confirmed. Registration details will be announced.
+STATUS:TENTATIVE
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

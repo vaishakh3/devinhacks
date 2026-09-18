@@ -1,0 +1,19 @@
+{
+  "name": "Devin Hacks Kochi",
+  "short_name": "Devin Hacks",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#a82f22",
+  "background_color": "#f2eadb",
+  "display": "browser"
+}

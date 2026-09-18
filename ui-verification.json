@@ -1,0 +1,35 @@
+{
+  "index.html": {
+    "unique_ids": true,
+    "anchors": true,
+    "local_assets": true,
+    "removed_content_absent": true
+  },
+  "design-guide.html": {
+    "unique_ids": true,
+    "anchors": true,
+    "local_assets": true,
+    "removed_content_absent": true
+  },
+  "calendar": "valid existing date-only file; unchanged",
+  "on_screen_playback_controls": "removed",
+  "devin_mark_bytes": 1434,
+  "format": "integrated event facts; detached illustration removed",
+  "animation": {
+    "kochi-mobile-hevc.mp4": "51e87a79a29fc3d17309b476b4b129da4f168c618230fd0f9d4294b3d6a81e3b",
+    "kochi-hero.mp4": "6f7fc1f7f4c6a3217f88fac8b1eb71df08f30ad3a1de2e7a954a890a6202a64f",
+    "kochi-mobile.mp4": "2764c42c3e05abe47ae2631be572b8f2ba11e2e7ea261c37629ec6ca7d50e0ae",
+    "kochi-hero-hevc.mp4": "52b567cd9126758962dcb15daf6d28c38ed095b87e5486dcde45a5a7703fd633"
+  },
+  "contrast": {
+    "#213a35 on #d0dcbc": 8.51,
+    "#43553f on #d0dcbc": 5.61,
+    "#a82f22 on #d0dcbc": 4.73,
+    "#fff1d7 on #b83d2c": 5.03,
+    "#ffe6c6 on #b83d2c": 4.65,
+    "#253e39 on #efd9ab": 8.31,
+    "#4d594a on #eaddc4": 5.5,
+    "#f4e7c8 on #25494e": 7.99,
+    "#d7ddc3 on #25494e": 7.01
+  }
+}
