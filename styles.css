@@ -56,3 +56,9 @@
 .footer-meta .footer-wordmark img{width:130px;height:auto}
 .footer-credits{text-align:right;font-size:10px;line-height:1.9;color:#d7ddc3}
 @media(max-width:540px){.arcade-track{height:140px}.arcade-track:before{top:calc(50% - 36px)}.arcade-track:after{top:calc(50% + 36px)}.site-footer .footer-meta{align-items:flex-start;flex-direction:column;gap:20px;padding-bottom:28px}.footer-credits{text-align:left;font-size:9px}}
+
+/* Classic arcade silhouette against a quiet star field. */
+.site-footer{background:#05050d}
+.arcade-track{border:0}
+.arcade-track:before,.arcade-track:after{display:none}
+.site-footer .footer-meta{border:0}

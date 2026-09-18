@@ -52,3 +52,5 @@ Browser follow-up confirmed the ac2 desktop HEVC source at 1920 × 1080, success
 
 ### Arcade footer
 A lightweight canvas animation moves a Pac-Man-style character across a row of pellets. It pauses offscreen and in background tabs, respects reduced-motion preferences, and can be stopped with Escape. Desktop (1280px) and mobile (390px) browser checks confirmed movement, disappearing pellets, aligned credits, and no mobile horizontal overflow. JavaScript syntax and local asset/anchor checks passed.
+
+Arcade palette revision: bright yellow character without an eye, near-black background with sparse stars, and no divider rules. Mobile visual check and JavaScript syntax check passed; no browser console errors. Hero playback code unchanged following confirmation that Low Power Mode caused the reported poster-only state.

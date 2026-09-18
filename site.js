@@ -150,15 +150,23 @@
     const y = height / 2, spacing = width < 541 ? 30 : 38;
     const mouth = staticFrame ? .24 : .035 + .28 * (.5 + .5 * Math.sin(travel * Math.PI / 18));
     ctx.clearRect(0, 0, width, height);
+    // Static, deterministic stars keep the arcade lane calm and inexpensive.
+    for (let i = 0; i < Math.ceil(width / 35); i++) {
+      const sx = (i * 137.51 + 17) % width;
+      const sy = (i * 71.37 + 11) % height;
+      if (Math.abs(sy - y) < r + 14) continue;
+      ctx.fillStyle = i % 3 ? '#65698d' : '#b5bddf';
+      ctx.fillRect(sx, sy, i % 5 ? 1 : 2, i % 5 ? 1 : 2);
+    }
     ctx.fillStyle = '#f2eadb';
     for (let px = spacing / 2; px < width; px += spacing) {
       if (px <= x + r * .5) continue;
       ctx.beginPath(); ctx.arc(px, y, 3, 0, Math.PI * 2); ctx.fill();
     }
-    ctx.fillStyle = '#efd9ab';
+    ctx.fillStyle = '#ffff00';
     ctx.beginPath(); ctx.moveTo(x, y);
     ctx.arc(x, y, r, mouth * Math.PI, (2 - mouth) * Math.PI); ctx.closePath(); ctx.fill();
-    ctx.fillStyle = '#213a35'; ctx.beginPath(); ctx.arc(x + r * .12, y - r * .49, 2.3, 0, Math.PI * 2); ctx.fill();
+
   }
   function tick(now) {
     raf = 0;
