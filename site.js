@@ -135,3 +135,55 @@
     } catch { /* Invalid configuration keeps the pre-registration state. */ }
   }
 })();
+
+// Decorative arcade lane: time-based travel, synchronized pellets, no external assets.
+(() => {
+  const canvas = document.querySelector('#footer-arcade');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  if (!ctx) return;
+  const motion = matchMedia('(prefers-reduced-motion: reduce)');
+  let width = 0, height = 0, travel = 0, last = 0, raf = 0, visible = false, stopped = false;
+  const radius = () => width < 541 ? 23 : 30;
+  function draw(staticFrame = false) {
+    const r = radius(), x = staticFrame ? width * .24 : travel - r * 2;
+    const y = height / 2, spacing = width < 541 ? 30 : 38;
+    const mouth = staticFrame ? .24 : .035 + .28 * (.5 + .5 * Math.sin(travel * Math.PI / 18));
+    ctx.clearRect(0, 0, width, height);
+    ctx.fillStyle = '#f2eadb';
+    for (let px = spacing / 2; px < width; px += spacing) {
+      if (px <= x + r * .5) continue;
+      ctx.beginPath(); ctx.arc(px, y, 3, 0, Math.PI * 2); ctx.fill();
+    }
+    ctx.fillStyle = '#efd9ab';
+    ctx.beginPath(); ctx.moveTo(x, y);
+    ctx.arc(x, y, r, mouth * Math.PI, (2 - mouth) * Math.PI); ctx.closePath(); ctx.fill();
+    ctx.fillStyle = '#213a35'; ctx.beginPath(); ctx.arc(x + r * .12, y - r * .49, 2.3, 0, Math.PI * 2); ctx.fill();
+  }
+  function tick(now) {
+    raf = 0;
+    if (!visible || document.hidden || motion.matches || stopped) { last = 0; return; }
+    if (last) travel += Math.min(now - last, 50) * .095;
+    last = now;
+    if (travel > width + radius() * 4) travel = 0;
+    draw(); raf = requestAnimationFrame(tick);
+  }
+  function sync() {
+    if (raf) cancelAnimationFrame(raf);
+    raf = 0; last = 0;
+    if (motion.matches) { draw(true); return; }
+    if (visible && !document.hidden && !stopped) raf = requestAnimationFrame(tick);
+  }
+  new ResizeObserver(() => {
+    const oldWidth = width;
+    width = canvas.clientWidth; height = canvas.clientHeight;
+    if (oldWidth) travel *= width / oldWidth;
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    canvas.width = Math.round(width * dpr); canvas.height = Math.round(height * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); draw(motion.matches); sync();
+  }).observe(canvas);
+  new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; sync(); }, {threshold: 0}).observe(canvas);
+  document.addEventListener('visibilitychange', sync);
+  motion.addEventListener('change', sync);
+  document.addEventListener('keydown', event => { if (event.key === 'Escape') { stopped = true; sync(); } });
+})();

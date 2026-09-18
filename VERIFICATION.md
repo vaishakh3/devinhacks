@@ -48,3 +48,7 @@ OCT now scales at 0.22em with the architectural date and uses semibold weight. C
 Increased the A–C optical kerning and recentered DEVIN HACKS. Verified aligned glyph pieces and zero adjacent surface intersections, then rerendered both 336-frame sequences at their existing HD resolutions. All frames were reviewed in chronological sheets and checked for valid decoding and nonblank output. Both codec variants and the downloadable film passed full MP4 decoding checks. Cache version ac2 replaces the earlier hero movies and posters. The separate KOCHI tribute is unaffected.
 
 Browser follow-up confirmed the ac2 desktop HEVC source at 1920 × 1080, successful end-of-film playback and the tighter A–C spacing in the displayed frame.
+
+
+### Arcade footer
+A lightweight canvas animation moves a Pac-Man-style character across a row of pellets. It pauses offscreen and in background tabs, respects reduced-motion preferences, and can be stopped with Escape. Desktop (1280px) and mobile (390px) browser checks confirmed movement, disappearing pellets, aligned credits, and no mobile horizontal overflow. JavaScript syntax and local asset/anchor checks passed.
