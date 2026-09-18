@@ -56,3 +56,5 @@ A lightweight canvas animation moves a Pac-Man-style character across a row of p
 Arcade palette revision: bright yellow character without an eye, near-black background with sparse stars, and no divider rules. Mobile visual check and JavaScript syntax check passed; no browser console errors. Hero playback code unchanged following confirmation that Low Power Mode caused the reported poster-only state.
 
 Pixel arcade revision: 16×16 Pac-Man and four ghost sprites, blue maze walls, score/level display, and brighter stars. Animated sprites share a clear corridor; loop resets after the trailing ghost exits. Desktop and 390px mobile visual checks passed, with no horizontal overflow or console errors. Reduced-motion and offscreen pause behavior retained.
+
+Chase revision: unequal ghost spacing and individual pacing; cyan follows a lower corridor through a wall opening. One glowing power pellet is consumed on contact. Lives display retained. Desktop and mobile visual checks completed; JavaScript syntax verified.

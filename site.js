@@ -175,8 +175,11 @@
     for (let left = -70; left < width; left += 430) {
       paths.push([[left,y-39],[left+130,y-39],[left+130,y-31],[left+141,y-31],[left+141,y-50],[left,y-50]]);
       paths.push([[left+200,y-50],[left+305,y-50],[left+305,y-39],[left+200,y-39],[left+200,y-50]]);
-      paths.push([[left,y+44],[left+100,y+44],[left+100,y+94],[left+165,y+94],[left+165,y+44],[left+270,y+44],[left+270,y+84],[left+330,y+84],[left+330,y+44],[left+430,y+44]]);
+
     }
+    const gate = width * .32, gap = width < 541 ? 24 : 32;
+    paths.push([[0,y+44],[gate-gap,y+44]], [[gate+gap,y+44],[width,y+44]]);
+    paths.push([[0,y+100],[width,y+100]]);
     function stroke() { paths.forEach(points => {ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.stroke();}); }
     ctx.strokeStyle = '#124be130'; ctx.lineWidth = 7; stroke();
     ctx.strokeStyle = '#2866ff'; ctx.lineWidth = 2; stroke();
@@ -185,26 +188,47 @@
     const unit = width < 541 ? 2 : 3;
     const y = width < 541 ? 98 : 110;
     const spacing = width < 541 ? 26 : 35;
-    const cycle = width + 600;
+    const cycle = width + 850;
     const x = staticFrame ? width * .38 : travel % cycle - 230;
     const frame = staticFrame ? 1 : Math.floor(travel / 12) % 3;
     ctx.clearRect(0, 0, width, height);
     for (let i = 0; i < Math.ceil(width / 12); i++) {
       const sx = (i * 137.51 + 17) % width, sy = (i * 71.37 + 11) % height;
-      if (Math.abs(sy - y) < 24) continue;
+      if (Math.abs(sy - y) < 26 || Math.abs(sy - y - 72) < 26) continue;
       ctx.fillStyle = i % 3 ? '#7790c1' : '#dde8ff';
       ctx.fillRect(Math.floor(sx), Math.floor(sy), i % 7 ? 1 : 2, i % 7 ? 1 : 2);
     }
     maze(y);
+    const powerX = width * .82;
     ctx.fillStyle = '#fff0c9';
     for (let px = spacing / 2; px < width; px += spacing) {
-      if (px <= x + 8 * unit) continue;
+      if (px <= x + 8 * unit || Math.abs(px - powerX) < 18) continue;
       ctx.fillRect(Math.round(px - 2), y - 2, 4, 4);
     }
-    // Four ghosts trail Pac-Man through the same clear corridor.
-    ['#ff3035','#ffb8df','#00d9ed','#ffad16'].forEach((color, i) => {
-      ghost(x - (i + 1) * (width < 541 ? 43 : 62), y, unit, color, frame % 2);
+    if (x + 8 * unit < powerX) {
+      ctx.save();
+      ctx.shadowColor = '#ffe9a0'; ctx.shadowBlur = staticFrame ? 15 : 16 + 5 * Math.sin(travel / 25);
+      ctx.fillStyle = '#fff3c8'; ctx.beginPath(); ctx.arc(powerX,y,8,0,Math.PI*2); ctx.fill();
+      ctx.restore();
+    }
+    // Different gaps and rhythms keep the chase from looking like a parade.
+    const scale = width < 541 ? .72 : 1;
+    const phase = staticFrame ? 0 : travel;
+    const pursuers = [
+      {gap:105, sway:9, period:91, color:'#ff3035'},
+      {gap:235, sway:17, period:127, color:'#ffb8df'},
+      {gap:430, sway:23, period:151, color:'#ffad16'}
+    ];
+    pursuers.forEach((g,i) => {
+      const gx = x - scale * (g.gap + g.sway * Math.sin(phase / g.period + i));
+      ghost(gx,y,unit,g.color,Math.floor(phase/(13+i*3))%2);
     });
+    // Cyan takes the lower lane, climbs through the opening, then joins the chase.
+    const distance = x - 160 * scale, gate = width * .32;
+    let cyanX = distance, cyanY = y + 72;
+    if (distance >= gate && distance < gate + 72) { cyanX = gate; cyanY -= distance - gate; }
+    else if (distance >= gate + 72) { cyanX = distance - 72; cyanY = y; }
+    ghost(cyanX,cyanY,unit,'#00d9ed',Math.floor(phase/19)%2);
     pacman(x, y, unit, [.05,.5,1][frame]);
   }
   function tick(now) {
@@ -212,7 +236,7 @@
     if (!visible || document.hidden || motion.matches || stopped) { last = 0; return; }
     if (last) travel += Math.min(now - last, 50) * .095;
     last = now;
-    if (travel > width + 600) travel = 0;
+    if (travel > width + 850) travel = 0;
     draw(); raf = requestAnimationFrame(tick);
   }
   function sync() {
