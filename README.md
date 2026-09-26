@@ -29,15 +29,15 @@ Confirmed: Devin Hacks Kochi; October 24; 12 hours; solo participation; Kochi wi
 
 The event facts are rendered in `index.html` so readers do not need JavaScript to find them. When updating the date, search this HTML, the calendar file and this documentation for `2026` and `October`. Update the calendar start date and exclusive next-day end date together. Update repeated facts consistently in hero, essentials, FAQ, footer and metadata.
 
-## Open registration
+## Registration and prizes
 
-Set `registrationUrl` in `event-config.js` to the actual HTTPS application URL. The script changes navigation/FAQ links to “Register now,” updates registration messaging and adds the registration action alongside the calendar download. It rejects non-HTTPS or malformed values and keeps the pre-registration state. Review and publish the event rules, eligibility, fee, contact, venue and actual start time at the same time. Test the third-party registration service before launch.
+Registration is open at https://luma.com/3v8n74l1. All seven registration actions are real HTML links, so they work without JavaScript. Keep `event-config.js` and the links in `index.html` synchronized when changing the destination. The script accepts HTTPS overrides and otherwise leaves the confirmed HTML links intact. The calendar remains a separate, date-only download.
 
-No fake email capture, fabricated success response, inactive “Register” button, sponsor endorsement or made-up event schedule is included.
+The grand prize is a PlayStation 5 for one winning builder. Its dedicated section sits immediately before the existing top-five Devin Max rewards. The artwork extends the miniature Kochi theme with a console and controller on a brick-red waterfront plinth, cream surroundings, palms and a Chinese fishing net. The headline, prize details and CTA are accessible HTML, not embedded in the image.
 
-## Current content scope
+`assets/ps5-kochi-prize.webp` (1254px, 109 KB) and its 640px variant (36 KB) are lazy-loaded responsive WebP assets. Both derive from original artwork generated with the built-in image-generation tool using the organizer’s supplied prize poster and the existing city poster as references. The generation brief is recorded in `PRIZE-ARTWORK.md`.
 
-The standalone company/architecture section and unrevealed first-place prize announcement have been removed from the page, metadata and FAQs. Their unused image assets are excluded from this website package. The animation now includes the subsequently authorized Kochi refinement: Water Metro vessels and landing, Fort Kochi details, district grouping and verified vehicle paths. Its approved visual style and subtle Easter eggs remain. Only the confirmed top-five Devin Max reward is announced.
+The top five winners still each receive a Devin Max plan worth $200. Plan duration and redemption terms remain pending.
 
 ## Animation and performance
 

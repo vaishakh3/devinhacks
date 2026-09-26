@@ -117,25 +117,17 @@
     else setTimeout(playFilm, 300);
   }
 
+  // HTML contains working registration links; config can update their destination.
   const application = window.DEVIN_EVENT?.registrationUrl;
   if (application) {
     try {
       const url = new URL(application);
-      if (url.protocol !== 'https:') return;
-      document.querySelectorAll('[data-registration-link]').forEach(a => {
-        a.href = url.href;
-        a.replaceChildren(document.createTextNode('Register now '));
-        const arrow = document.createElement('span'); arrow.textContent = '↗'; arrow.setAttribute('aria-hidden', 'true'); a.append(arrow);
-      });
-      const ticketNote = document.querySelector('.ticket-note');
-      if (ticketNote) ticketNote.textContent = 'Registration is open.';
-      document.querySelector('#registration-answer').textContent = 'Registration is open. Use the application link to review the participation details and register.';
-      document.querySelector('#registration-status').textContent = 'Your next build starts here. Registration is open.';
-      document.querySelector('#registration-fact').textContent = 'Open now';
-      const calendar = document.querySelector('#calendar-link');
-      const register = calendar.cloneNode(true); register.removeAttribute('id'); register.removeAttribute('download'); register.href = url.href; register.innerHTML = 'Register now <span aria-hidden="true">↗</span>'; calendar.before(register);
-      calendar.className = 'inline-link'; calendar.style.marginTop = '12px';
-    } catch { /* Invalid configuration keeps the pre-registration state. */ }
+      if (url.protocol === 'https:') {
+        document.querySelectorAll('[data-registration-link]').forEach(a => {
+          a.href = url.href;
+        });
+      }
+    } catch { /* Keep the confirmed HTML registration links if config is invalid. */ }
   }
 })();
 
