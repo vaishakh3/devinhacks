@@ -1,5 +1,13 @@
 # PS5 prize artwork
 
+## Transparent cutout (current)
+
+The final artwork now uses true alpha transparency, removing the cream image rectangle and background between the scene elements. The voxel scene remains intact. Built-in image generation performed the background extraction; exports preserve alpha at 1254px (314 KB) and 640px (110 KB). The original cutout is saved as `ps5-kochi-transparent.png` in task outputs.
+
+Background-extraction prompt:
+
+Use case: background-extraction. Edit the supplied pixel-art PS5 Kochi island image. Remove ALL the cream/beige background and make it genuinely transparent (RGBA alpha), including negative space between the console, palm fronds, fishing net supports and beneath/around the island. Preserve the exact existing pixelated voxel PS5 console, controller, stepped brick-red plinth, palm trees, church, fishing net, boat, teal waterfront, small lights and their proportions/composition. Keep crisp voxel edges and blue/amber lighting on the objects. Do not redraw or restyle the objects; do not change perspective or add/remove scene elements. No white/cream rectangular backdrop, no background glow haze, no solid floor behind the island, no fake checkerboard. Only the isolated intact diorama on true transparency. Fit the full existing subject within the frame with tight but safe transparent margins around its silhouette. Output transparent PNG.
+
 ## Final pixel-art revision
 
 At the organizer’s request, the final artwork uses the original promotional poster’s visible voxel blocks and stepped silhouettes throughout the console, controller, palms, buildings and water. The plain cream background, green foliage, red plinth and teal waterfront preserve the website palette. Generated with the built-in image-generation tool. Final original: `ps5-kochi-pixel.png` in task outputs. Website exports: 1254px / 209 KB and 640px / 71 KB. The initial smooth miniature version is superseded.
