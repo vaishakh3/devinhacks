@@ -106,22 +106,25 @@
 
 @media(max-width:1050px){.ticket-location{display:block;font-size:0}.ticket-location>span{font:9px/1.4 var(--mono);margin-top:0}}
 
-/* The grand prize extends the miniature Kochi world in the site's paper palette. */
-.grand-prize{background:var(--paper)}
-.prize-layout{display:grid;grid-template-columns:.85fr 1.15fr;align-items:center;gap:2%;max-width:1600px;margin-inline:auto}
-.prize-copy{position:relative;z-index:1;padding-block:20px}
-.prize-kicker{display:flex;align-items:center;gap:15px;font:11px/1.5 var(--mono);letter-spacing:.1em;margin-bottom:28px}
-.prize-kicker>span{display:grid;place-items:center;width:42px;height:42px;border:1px solid var(--accent);color:var(--accent);font-size:17px}
-.prize-copy h2{font-size:clamp(58px,6.8vw,104px);font-weight:500;line-height:.96;letter-spacing:-.065em}
-.prize-description{font-size:16px;line-height:1.75;color:var(--muted);margin-top:17px}
-.prize-action{max-width:285px;margin-top:30px;background:var(--accent);color:var(--paper)}
-.prize-footnote{font:9px/1.7 var(--mono);letter-spacing:.065em;margin-top:20px;color:var(--muted)}
-.prize-art{min-width:0}
-.prize-art img{width:100%;height:auto;aspect-ratio:1;mix-blend-mode:multiply}
-.prize-art figcaption{display:flex;justify-content:space-between;gap:20px;border-top:1px solid var(--line);padding-top:14px;margin-inline:7%;font:9px/1.5 var(--mono);letter-spacing:.06em;color:var(--muted)}
-.prize-next{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding-top:22px;margin-top:55px}
-.prize-next>span{font-size:18px;letter-spacing:-.025em}.prize-next .inline-link{font-size:14px}
+/* A transparent voxel prize sits directly on the paper surface. */
+.grand-prize{background:var(--paper);padding-block:60px 48px}
+.grand-prize>.section-label,.prize-layout,.prize-next{max-width:1180px;margin-inline:auto}
+.grand-prize>.section-label{margin-bottom:18px}
+.prize-layout{display:grid;grid-template-columns:1fr 1.12fr;align-items:center;gap:40px}
+.prize-copy{position:relative;z-index:1;padding-block:12px}
+.prize-kicker{display:flex;align-items:center;gap:13px;font:11px/1.5 var(--mono);letter-spacing:.1em;margin-bottom:22px}
+.prize-kicker>span{display:grid;place-items:center;width:36px;height:36px;border:1px solid var(--accent);color:var(--accent);font-size:15px}
+.prize-copy h2{font-size:clamp(80px,8.8vw,126px);font-weight:500;line-height:.9;letter-spacing:-.065em}
+.prize-copy h2 .accent{display:block}
+.prize-description{font-size:16px;line-height:1.65;color:var(--muted);margin-top:24px;max-width:350px}
+.prize-action{max-width:300px;margin-top:24px;background:var(--accent);color:var(--paper)}
+.prize-footnote{font:10px/1.7 var(--mono);letter-spacing:.065em;margin-top:16px;color:var(--muted)}
+.prize-art{min-width:0;width:100%;max-width:560px;justify-self:end}
+.prize-art img{width:100%;height:auto;aspect-ratio:1}
+.prize-next{display:flex;justify-content:space-between;align-items:center;gap:24px;border-top:1px solid var(--line);padding-top:16px;margin-top:22px}
+.prize-next>span{font-size:16px;letter-spacing:-.025em}.prize-next .inline-link{font-size:14px}
 .calendar-link{margin-top:16px}
-@media(max-width:1050px) and (min-width:761px){.prize-copy h2{font-size:65px}.prize-footnote{max-width:260px}.prize-art figcaption{font-size:8px;margin-inline:3%}}
-@media(max-width:760px){.prize-layout{grid-template-columns:1fr;gap:25px}.prize-copy{padding:0}.prize-copy h2{font-size:clamp(62px,12vw,90px)}.prize-kicker{margin-bottom:24px}.prize-art{width:100%;max-width:580px;justify-self:center}.prize-art figcaption{font-size:9px}.prize-next{margin-top:35px;align-items:flex-start;flex-direction:column;gap:10px}.prize-next>span{font-size:17px}.prize-action{max-width:340px}.prize-footnote{font-size:9px}}
+@media(min-width:761px){.grand-prize{scroll-margin-top:96px}}
+@media(max-width:1050px) and (min-width:761px){.prize-layout{gap:25px}.prize-copy h2{font-size:90px}.prize-description{max-width:280px}.prize-kicker{font-size:10px}}
+@media(max-width:760px){.grand-prize{padding-block:42px 36px}.grand-prize>.section-label{margin-bottom:26px}.prize-layout{grid-template-columns:1fr;gap:12px}.prize-copy{padding:0}.prize-copy h2{font-size:clamp(56px,13.5vw,84px);line-height:1}.prize-copy h2 .accent{display:inline}.prize-kicker{margin-bottom:18px}.prize-description{margin-top:16px;max-width:none}.prize-art{max-width:400px;justify-self:center}.prize-next{margin-top:12px;align-items:flex-start;flex-direction:column;gap:4px}.prize-action{max-width:340px;margin-top:20px}.prize-footnote{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.prize-action{transition:none}}

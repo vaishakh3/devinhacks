@@ -10,3 +10,5 @@
 Schedule discrepancy observed: Luma displays October 24 at 17:00 through October 25 at 11:00 (18 hours), whereas the existing website says 12 hours on October 24. The organizer was asked which schedule to use; the existing schedule is retained pending clarification.
 
 Pixel-art revision: the organizer requested the poster’s pixelated style. Replaced both WebP variants with the generated voxel artwork and versioned their URLs. Desktop and mobile loading and composition rechecked. No other layout or registration behavior changed.
+
+Transparent-artwork revision: confirmed RGBA input and alpha-preserving WebP exports, with 811,828 fully transparent source pixels. Removed multiply blending and the redundant artwork caption, bounded the illustration at 560px, reduced desktop/mobile spacing, and kept the desktop anchor below the fixed header. Desktop and mobile layouts were visually rechecked.
