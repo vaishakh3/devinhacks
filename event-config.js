@@ -1,5 +1,4 @@
-/* Set registrationUrl to the confirmed application URL when registration opens.
-   Only HTTPS URLs are accepted. null keeps the honest pre-registration state.
-   Event copy is server-rendered in index.html so it remains useful without JS.
-   The calendar is a date-only reminder: it does not invent a start time. */
-window.DEVIN_EVENT = Object.freeze({ registrationUrl: null });
+/* Keep this URL and the registration links in index.html in sync.
+   Links are also rendered in HTML so registration works without JavaScript.
+   Only HTTPS URL overrides are accepted by site.js. */
+window.DEVIN_EVENT = Object.freeze({ registrationUrl: 'https://luma.com/3v8n74l1' });
