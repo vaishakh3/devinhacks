@@ -8,3 +8,5 @@
 - No dependency installation or build is required for this static website.
 
 Schedule discrepancy observed: Luma displays October 24 at 17:00 through October 25 at 11:00 (18 hours), whereas the existing website says 12 hours on October 24. The organizer was asked which schedule to use; the existing schedule is retained pending clarification.
+
+Pixel-art revision: the organizer requested the poster’s pixelated style. Replaced both WebP variants with the generated voxel artwork and versioned their URLs. Desktop and mobile loading and composition rechecked. No other layout or registration behavior changed.

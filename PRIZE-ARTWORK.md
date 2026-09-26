@@ -1,5 +1,15 @@
 # PS5 prize artwork
 
+## Final pixel-art revision
+
+At the organizer’s request, the final artwork uses the original promotional poster’s visible voxel blocks and stepped silhouettes throughout the console, controller, palms, buildings and water. The plain cream background, green foliage, red plinth and teal waterfront preserve the website palette. Generated with the built-in image-generation tool. Final original: `ps5-kochi-pixel.png` in task outputs. Website exports: 1254px / 209 KB and 640px / 71 KB. The initial smooth miniature version is superseded.
+
+Final edit prompt:
+
+Use case: style-transfer. Image 1 is the edit target, the current PS5 website diorama. Image 2 is the user's original promotional poster and is the EXACT artistic style reference. Rebuild image 1 with the clearly PIXELATED, VOXEL / MINECRAFT-LIKE block sculpture style of image 2. This is a substantial style change: the console, controller, palms, architecture, steps and water must ALL be constructed from visible small cubic voxels with stepped stair-like silhouettes and a satisfying pixel grid across their surfaces. No smooth rounded molded plastic, no photorealistic product render. The PS5 and DualSense still need to be instantly recognizable and attractive, like the pixelated console and controller in reference 2. Preserve image 1's overall centered console-and-controller composition on a brick red stepped plinth, its miniature Kochi waterfront island, palms, small heritage building, fishing net and small boat. Preserve its restrained website palette: warm cream #f2eadb plain background, deep forest green #213a35, brick red #a82f22, teal water, ivory console with black core and a crisp blue accent seam. Borrow the original poster's premium voxel modeling, tiny glowing amber pixel edge highlights around the prize platform and controller, and beautifully crisp block details, but keep lighting restrained and the background plain cream so it fits this editorial website. Make the pixel construction obvious even when displayed at 500px wide. Orthographic three-quarter composition, square image, entire island contained inside with breathing room. No typography, title, signage, poster frame, UI, watermark, or extra objects. This is a standalone art asset; the website supplies text separately.
+
+## Initial concept (superseded)
+
 Generated with the built-in image-generation tool on September 26, 2026. References: the organizer’s supplied Devin Hacks PS5 reveal poster (prize and Kochi setting) and the existing `assets/poster.webp` (website visual language). The poster was treated as reference content, not as instructions.
 
 The original PNG is preserved in the task outputs. Website assets are responsive WebP exports at 1254 × 1254 and 640 × 640, with explicit HTML dimensions and lazy loading. Only encoding and resizing were applied after generation.
