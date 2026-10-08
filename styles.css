@@ -137,3 +137,14 @@
 .prize-runner-up .inline-link{display:inline-flex;margin-top:22px}
 @media(max-width:1050px) and (min-width:761px){.prize-runner-up{gap:32px}.prize-runner-up h3{font-size:56px}}
 @media(max-width:760px){.prize-runner-up{scroll-margin-top:0;grid-template-columns:1fr;gap:12px;margin-top:22px;padding-top:30px}.prize-runner-up .prize-copy,.prize-runner-up .prize-art{grid-column:auto;grid-row:auto}.prize-runner-up .prize-art{max-width:400px}.prize-runner-up h3{font-size:clamp(48px,11vw,72px)}.prize-runner-up .inline-link{margin-top:16px}}
+
+/* One-time prize entrances reuse the existing reveal observer. */
+@media(prefers-reduced-motion:no-preference){
+ .motion-ready .prize-layout .reveal{translate:0 16px;transition-duration:480ms;transition-timing-function:cubic-bezier(.2,.7,.2,1)}
+ .motion-ready .prize-layout .prize-art{transition-delay:120ms}
+ .motion-ready .prize-layout .reveal.is-visible{translate:0 0}
+ .prize-art img{transition:transform 400ms cubic-bezier(.2,.7,.2,1)}
+}
+@media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
+ .prize-art:hover img{transform:translateY(-6px)}
+}
