@@ -128,3 +128,12 @@
 @media(max-width:1050px) and (min-width:761px){.prize-layout{gap:25px}.prize-copy h2{font-size:90px}.prize-description{max-width:280px}.prize-kicker{font-size:10px}}
 @media(max-width:760px){.grand-prize{padding-block:42px 36px}.grand-prize>.section-label{margin-bottom:26px}.prize-layout{grid-template-columns:1fr;gap:12px}.prize-copy{padding:0}.prize-copy h2{font-size:clamp(56px,13.5vw,84px);line-height:1}.prize-copy h2 .accent{display:inline}.prize-kicker{margin-bottom:18px}.prize-description{margin-top:16px;max-width:none}.prize-art{max-width:400px;justify-self:center}.prize-next{margin-top:12px;align-items:flex-start;flex-direction:column;gap:4px}.prize-action{max-width:340px;margin-top:20px}.prize-footnote{margin-top:12px}}
 @media(prefers-reduced-motion:reduce){.prize-action{transition:none}}
+
+/* The second prize shares the paper surface and alternates the artwork. */
+.prize-runner-up{scroll-margin-top:96px;grid-template-columns:1.12fr 1fr;border-top:1px solid var(--line);margin-top:22px;padding-top:30px;gap:64px}
+.prize-runner-up .prize-copy{grid-column:2;grid-row:1}
+.prize-runner-up .prize-art{grid-column:1;grid-row:1;justify-self:center;max-width:480px}
+.prize-runner-up h3{font-size:clamp(54px,5.6vw,80px);font-weight:500;line-height:1;letter-spacing:-.06em}
+.prize-runner-up .inline-link{display:inline-flex;margin-top:22px}
+@media(max-width:1050px) and (min-width:761px){.prize-runner-up{gap:32px}.prize-runner-up h3{font-size:56px}}
+@media(max-width:760px){.prize-runner-up{scroll-margin-top:0;grid-template-columns:1fr;gap:12px;margin-top:22px;padding-top:30px}.prize-runner-up .prize-copy,.prize-runner-up .prize-art{grid-column:auto;grid-row:auto}.prize-runner-up .prize-art{max-width:400px}.prize-runner-up h3{font-size:clamp(48px,11vw,72px)}.prize-runner-up .inline-link{margin-top:16px}}
