@@ -31,11 +31,13 @@ The event facts are rendered in `index.html` so readers do not need JavaScript t
 
 ## Registration and prizes
 
-Registration is open at https://luma.com/3v8n74l1. All seven registration actions are real HTML links, so they work without JavaScript. Keep `event-config.js` and the links in `index.html` synchronized when changing the destination. The script accepts HTTPS overrides and otherwise leaves the confirmed HTML links intact. The calendar remains a separate, date-only download.
+Registration is open at https://luma.com/3v8n74l1. All eight registration actions are real HTML links, so they work without JavaScript. Keep `event-config.js` and the links in `index.html` synchronized when changing the destination. The script accepts HTTPS overrides and otherwise leaves the confirmed HTML links intact. The calendar remains a separate, date-only download.
 
 The grand prize is a PlayStation 5 for one winning builder. Its dedicated section sits immediately before the existing top-five Devin Max rewards. The artwork extends the pixelated Kochi poster style with a console and controller on a brick-red waterfront plinth, a transparent background, palms and a Chinese fishing net. The headline, prize details and CTA are accessible HTML, not embedded in the image.
 
 `assets/ps5-kochi-prize.webp` (1254px, 314 KB) and its 640px variant (110 KB) are lazy-loaded responsive WebP assets with alpha transparency. The prize section uses a bounded illustration size and reduced spacing so it stays compact on large screens. Both derive from original artwork generated with the built-in image-generation tool using the organizer’s supplied prize poster and the existing city poster as references. The generation brief is recorded in `PRIZE-ARTWORK.md`.
+
+Second place receives a Bambu Lab A1 Mini 3D Printer. Its transparent voxel illustration sits in a compact, alternating row beneath the PS5. Printed objects in the illustration are decorative. Responsive WebP exports at 1254px and 640px preserve alpha transparency and load lazily.
 
 The top five winners still each receive a Devin Max plan worth $200. Plan duration and redemption terms remain pending.
 
