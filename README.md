@@ -39,6 +39,8 @@ The grand prize is a PlayStation 5 for one winning builder. Its dedicated sectio
 
 Second place receives a Bambu Lab A1 Mini 3D Printer. Its transparent voxel illustration sits in a compact, alternating row beneath the PS5. Printed objects in the illustration are decorative. Responsive WebP exports at 1254px and 640px preserve alpha transparency and load lazily.
 
+Both prize rows use a one-time 480ms fade and 16px upward entrance, with the artwork delayed by 120ms. Fine-pointer hover lifts the artwork by 6px over 400ms. These effects only apply when reduced motion is not requested; the existing observer handles once-only entrances without additional JavaScript.
+
 The top five winners still each receive a Devin Max plan worth $200. Plan duration and redemption terms remain pending.
 
 ## Animation and performance
