@@ -31,7 +31,7 @@ The event facts are rendered in `index.html` so readers do not need JavaScript t
 
 ## Registration and prizes
 
-Registration is open at https://luma.com/3v8n74l1. All eight registration actions are real HTML links, so they work without JavaScript. Keep `event-config.js` and the links in `index.html` synchronized when changing the destination. The script accepts HTTPS overrides and otherwise leaves the confirmed HTML links intact. The calendar remains a separate, date-only download.
+Registration is open at https://luma.com/3v8n74l1. All nine registration actions are real HTML links, so they work without JavaScript. Keep `event-config.js` and the links in `index.html` synchronized when changing the destination. The script accepts HTTPS overrides and otherwise leaves the confirmed HTML links intact. The calendar remains a separate, date-only download.
 
 The grand prize is a PlayStation 5 for one winning builder. Its dedicated section sits immediately before the existing top-five Devin Max rewards. The artwork extends the pixelated Kochi poster style with a console and controller on a brick-red waterfront plinth, a transparent background, palms and a Chinese fishing net. The headline, prize details and CTA are accessible HTML, not embedded in the image.
 
@@ -39,7 +39,9 @@ The grand prize is a PlayStation 5 for one winning builder. Its dedicated sectio
 
 Second place receives a Bambu Lab A1 Mini 3D Printer. Its transparent voxel illustration sits in a compact, alternating row beneath the PS5. Printed objects in the illustration are decorative. Responsive WebP exports at 1254px and 640px preserve alpha transparency and load lazily.
 
-Both prize rows use a one-time 480ms fade and 16px upward entrance, with the artwork delayed by 120ms. Fine-pointer hover lifts the artwork by 6px over 400ms. These effects only apply when reduced motion is not requested; the existing observer handles once-only entrances without additional JavaScript.
+Third place receives a Fujifilm Instax Mini 12 instant camera. Its matching transparent voxel illustration follows the printer, with the copy on the left and artwork on the right on desktop. The depicted camera color and miniature photo prints are illustrative, not additional prize commitments. Responsive WebP assets retain transparency and lazy loading.
+
+All three prize rows use a one-time 480ms fade and 16px upward entrance, with the artwork delayed by 120ms. Fine-pointer hover lifts the artwork by 6px over 400ms. These effects only apply when reduced motion is not requested; the existing observer handles once-only entrances without additional JavaScript.
 
 The top five winners still each receive a Devin Max plan worth $200. Plan duration and redemption terms remain pending.
 

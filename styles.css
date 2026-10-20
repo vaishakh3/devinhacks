@@ -148,3 +148,10 @@
 @media(prefers-reduced-motion:no-preference) and (hover:hover) and (pointer:fine){
  .prize-art:hover img{transform:translateY(-6px)}
 }
+
+/* Continue the alternating prize layout; mobile keeps text before artwork. */
+@media(min-width:761px){
+ .prize-third{grid-template-columns:1fr 1.12fr}
+ .prize-third .prize-copy{grid-column:1}
+ .prize-third .prize-art{grid-column:2}
+}
